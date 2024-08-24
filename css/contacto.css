@@ -1,0 +1,56 @@
+.contenedor {
+    max-width: 600px;
+    margin: 90px auto 60px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contenedor h2 {
+    font-size: 72px;
+    font-family: "Jersey 10", sans-serif;
+    font-weight: 400;
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    margin-top: 0;
+}
+
+.contenedor form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contenedor label {
+    margin-bottom: 5px;
+    margin-left: 2px;
+    color: #555;
+}
+
+.contenedor input,
+.contenedor textarea {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #cbcbcb;
+    border-radius: 4px;
+}
+
+.contenedor textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+.contenedor button {
+    background-color: #378eff;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.25s ease;
+}
+
+.contenedor button:hover {
+    background-color: #1a6dda;
+}

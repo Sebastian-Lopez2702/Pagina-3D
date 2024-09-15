@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import "./styles/pages/Normalize.css";
+import "./styles/pages/AllPages.css";
 
 import HomePage from "./pages/HomePage";
 import Contacto from "./pages/Contacto";

@@ -1,0 +1,25 @@
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #37474f;
+    color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.img-nombre {
+    display: flex;
+    align-items: center;
+}
+
+.img-nombre img {
+    width: 50px;
+    height: auto;
+    margin-right: 15px;
+}
+
+.img-nombre h2 {
+    margin: 0;
+    font-size: 2rem;
+}

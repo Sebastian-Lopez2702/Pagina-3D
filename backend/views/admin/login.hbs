@@ -1,4 +1,17 @@
 <div class="contenedor">
+
+  {{#if error}}
+    <div
+      class="alert alert-warning container d-flex align-items-center"
+      role="alert"
+    >
+      <div class="d-flex align-items-center">
+        <i class="fa-solid fa-circle-exclamation me-2"></i>
+        <p class="m-0">Su usuario o contraseña son incorrectos</p>
+      </div>
+    </div>
+  {{/if}}
+
   <form action="/admin/login" method="POST">
     <label for="user">Usuario:</label>
     <input type="text" id="user" name="user" required />
@@ -8,7 +21,4 @@
 
     <button type="submit">Ingresar</button>
   </form>
-  {{#if error}}
-    <p>Su usuario o contraseña son incorrectos</p>
-  {{/if}}
 </div>

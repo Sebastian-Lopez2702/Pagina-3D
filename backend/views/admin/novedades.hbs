@@ -48,7 +48,10 @@
             <td class="align-middle">{{titulo}}</td>
             <td class="align-middle">{{cuerpo}}</td>
             <td class="text-end align-middle">
-              <button><i class="fa-solid fa-pen"></i></button>
+              <button><i
+                  class="fa-solid fa-pen"
+                  onclick="window.location.href='/admin/novedades/modificar/{{id}}'"
+                ></i></button>
               <button><i
                   class="fa-solid fa-trash-can"
                   onclick="window.location.href='/admin/novedades/eliminar/{{id}}'"

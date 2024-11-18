@@ -1,5 +1,6 @@
 <div class="contenedor">
-  <h2>Agregar una nueva novedad</h2>
+  <h2>Modifique la novedad Nº {{novedad.id}}</h2>
+
   {{#if error}}
     <div
       class="alert alert-danger container d-flex align-items-center"
@@ -11,13 +12,17 @@
       </div>
     </div>
   {{/if}}
-  <form action="/admin/novedades/agregar" method="POST">
+
+  <form action="/admin/novedades/modificar" method="POST">
+
+    <input type="hidden" value="{{novedad.id}}" name="id" />
+
     <label for="user">Titulo:</label>
     <input
       type="text"
       id="titulo"
       name="titulo"
-      placeholder="Ingrese el titulo"
+      value="{{novedad.titulo}}"
       required
     />
 
@@ -26,15 +31,10 @@
       type="text"
       id="cuerpo"
       name="cuerpo"
-      placeholder="Ingrese el cuerpo de la novedad"
       style="min-height: 200px"
       required
-    ></textarea>
+    >{{novedad.cuerpo}}</textarea>
 
-    <button
-      class="btn"
-      type="submit"
-      style="background-color: #157347"
-    >Agregar</button>
+    <button class="btn" type="submit">Modificar</button>
   </form>
 </div>

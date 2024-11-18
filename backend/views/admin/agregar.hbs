@@ -1,0 +1,32 @@
+<div class="contenedor">
+  <h2>Agregar una nueva novedad</h2>
+  <form action="/admin/novedades/agregar" method="POST">
+    <label for="user">Titulo:</label>
+    <input
+      type="text"
+      id="titulo"
+      name="titulo"
+      placeholder="Ingrese el titulo"
+      required
+    />
+
+    <label for="password">Cuerpo:</label>
+    <textarea
+      type="text"
+      id="cuerpo"
+      name="cuerpo"
+      placeholder="Ingrese el cuerpo de la novedad"
+      style="min-height: 200px"
+      required
+    ></textarea>
+
+    <button
+      class="btn"
+      type="submit"
+      style="background-color: #157347"
+    >Agregar</button>
+  </form>
+  {{#if error}}
+    <p>{{message}}</p>
+  {{/if}}
+</div>

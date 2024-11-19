@@ -17,13 +17,13 @@ export default function Contacto() {
           <label for="apellido">Apellido:</label>
           <input type="text" id="apellido" name="apellido" required />
 
-          <label for="email">Correo Electrónico:</label>
+          <label for="email">Correo electrónico:</label>
           <input type="email" id="email" name="email" required />
 
-          <label for="telefono">Número de Teléfono:</label>
+          <label for="telefono">Número de teléfono:</label>
           <input type="tel" id="telefono" name="telefono" required />
 
-          <label for="descripcion">Descripción del Producto:</label>
+          <label for="descripcion">Descripción del producto a diseñar:</label>
           <textarea id="descripcion" name="descripcion" required></textarea>
 
           <button type="submit">Enviar</button>

@@ -13,11 +13,15 @@
     </div>
   {{/if}}
 
-  <form action="/admin/novedades/modificar" method="POST">
+  <form
+    action="/admin/novedades/modificar"
+    method="POST"
+    enctype="multipart/form-data"
+  >
 
     <input type="hidden" value="{{novedad.id}}" name="id" />
 
-    <label for="user">Titulo:</label>
+    <label>Titulo:</label>
     <input
       type="text"
       id="titulo"
@@ -26,7 +30,7 @@
       required
     />
 
-    <label for="password">Cuerpo:</label>
+    <label>Cuerpo:</label>
     <textarea
       type="text"
       id="cuerpo"
@@ -34,6 +38,23 @@
       style="min-height: 200px"
       required
     >{{novedad.cuerpo}}</textarea>
+
+    <div>
+      <label>Imagen:</label>
+      <input type="file" class="form-control" name="imagen" id="imagen" />
+      <label><input
+          type="checkbox"
+          name="img_delete"
+          id="img_delete"
+          value="1"
+        />¿Desea eliminar la imagen actual?</label>
+      <input
+        type="hidden"
+        name="img_original"
+        id="img_original"
+        value="{{novedad.img_id}}"
+      />
+    </div>
 
     <button class="btn" type="submit">Modificar</button>
   </form>

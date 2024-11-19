@@ -10,8 +10,8 @@ router.get('/novedades', async function (req, res, next) {
         if (novedades.img_id) {
             const imagen = cloudinary.url(novedades.img_id, {
                 width: 800,
-                height: 300,
-                crop: 'pad'
+                height: 450,
+                crop: 'fill'
             });
 
             return {

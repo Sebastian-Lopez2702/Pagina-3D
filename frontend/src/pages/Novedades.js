@@ -1,37 +1,44 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import Nav from "../components/layout/Nav";
 import Footer from "../components/layout/Footer";
+import NovedadItem from "../components/novedades/NovedadItem";
 
 import "../styles/pages/Novedades.css";
 
 export default function Novedades() {
+  const [loading, setLoading] = useState(false);
+  const [novedades, setNovedades] = useState([]);
+
+  useEffect(() => {
+    const cargarNovedades = async () => {
+      setLoading(true);
+      const response = await axios.get("http://localhost:3000/api/novedades");
+      setNovedades(response.data);
+      setLoading(false);
+    };
+
+    cargarNovedades();
+  }, []);
+
   return (
     <div>
       <Nav />
-      <div class="contenedor-novedades">
-        <div class="novedad">
-          <img src="..\img\filamentos.jpg" alt="imagen de filamentos" />
-          <h3>Nuevos tipos de filamentos disponibles</h3>
-          <p>
-            ¡Hemos ampliado nuestra oferta de filamentos! Ahora puedes elegir
-            entre una variedad aún mayor de materiales, incluyendo filamentos de
-            metal y carbono.
-          </p>
-        </div>
-        <div class="divisor"></div>
-        <div class="novedad">
-          <img
-            src="..\img\impresoras.jpg"
-            alt="imagen de nuevas impresoras 3D"
-          />
-          <h3>¡Nuevas impresoras 3D en nuestro catálogo!</h3>
-          <p>
-            Nos complace anunciar la incorporación de nuevas impresoras 3D de
-            última generación. Estas impresoras ofrecen mayor precisión,
-            velocidad y versatilidad para tus proyectos, permitiéndote llevar
-            tus ideas al siguiente nivel.
-          </p>
-        </div>
+      <div className="contenedor-novedades">
+        {loading ? (
+          <p>Cargando novedades...</p>
+        ) : (
+          novedades.map((novedad, index) => (
+            <div key={novedad.id} className="novedad-contenedor">
+              <NovedadItem
+                title={novedad.titulo}
+                image={novedad.imagen}
+                content={novedad.cuerpo}
+              />
+              {index < novedades.length - 1 && <div className="divisor"></div>}
+            </div>
+          ))
+        )}
       </div>
       <Footer />
     </div>

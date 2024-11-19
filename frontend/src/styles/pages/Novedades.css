@@ -1,8 +1,8 @@
 .contenedor-novedades {
-  max-width: 800px;
+  max-width: 850px;
   margin: 90px auto 30px;
   background-color: #fff;
-  padding: 20px;
+  padding: 50px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -13,6 +13,14 @@ h3 {
 
 p {
   font-size: 18px;
+}
+
+.novedad-item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: left;
+  padding: 20px;
 }
 
 .novedad {
@@ -28,8 +36,10 @@ p {
 }
 
 .novedad img {
-  max-width: 100%;
+  margin: 0 auto;
+  max-width: 80%;
   border-radius: 8px;
+  height: auto;
   margin-bottom: 15px;
 }
 
